@@ -1,16 +1,16 @@
 import "./CurrentWeather.css"
 // import { IoMdSunny } from "react-icons/io";
 import React from "react";
-const CurrentWeather = ({data}) => {
+const CurrentWeather = ({ data }) => {
   // console.log(data); 
-  return  (
-    <div className="weather">
+  return (
+    data && <div className="weather">
       <div className="top">
         <div>
           <p className="city">{data.city}</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`}/>
+        <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`} />
       </div>
       <div className="bottom">
         <p className="temperature">{Math.round(data.main.temp)}°C</p>
@@ -37,7 +37,7 @@ const CurrentWeather = ({data}) => {
         </div>
       </div>
     </div>
-  ) ;
+  );
 }
- 
+
 export default CurrentWeather;
